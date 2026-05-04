@@ -15,3 +15,7 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
+    import pandas as pd
+    df = pd.read_csv("files/input/tbl1.tsv", sep="\t")
+    return  df["c4"].str.upper().drop_duplicates().sort_values().tolist()
+print(pregunta_06())
